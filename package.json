@@ -4,6 +4,8 @@
   "description": "Configuração Base JavaScript",
   "main": "index.js",
   "scripts": {
+    "build": "./node_modules/.bin/webpack --colors --progress",
+    "watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,13 +27,22 @@
   },
   "homepage": "https://gitlab.com/WagnerGalvao/js-tdd#readme",
   "devDependencies": {
-    "eslint": "^6.1.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "husky": "^3.0.4"
+    "husky": "^3.0.5",
+    "ramda": "^0.26.1",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^16.9.0"
+  }
 }
