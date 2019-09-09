@@ -1,6 +1,14 @@
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const nodEnv = process.env.NODE_ENV || 'production';
 
 module.exports = {
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin()
+    ],
+  },
+
 
   output: {
     filename: './build.js'
@@ -17,5 +25,11 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': { NODE_ENV: JSON.stringify(nodEnv) }
+//      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
+  ]
 }
