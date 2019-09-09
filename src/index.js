@@ -2,8 +2,6 @@
  * import´s
  */
 import * as R from 'ramda';
-import react from 'react';
-import reactDOM from 'react-dom';
 
 /**
  * [arr1 Sequência de valores]
