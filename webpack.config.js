@@ -5,10 +5,17 @@ const nodEnv = process.env.NODE_ENV || 'production';
 module.exports = {
   optimization: {
     minimizer: [
-      new UglifyJsPlugin()
+      new UglifyJsPlugin({
+          uglifyOptions: {
+            warnings: false,
+            output: { comments: false },
+          },
+          sourceMap: true
+      })
     ],
   },
 
+  devtool: 'source-map',
 
   output: {
     filename: './build.js'
