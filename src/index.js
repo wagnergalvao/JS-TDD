@@ -1,7 +1,7 @@
 /**
  * import
  */
- import * as R from 'ramda';
+import * as R from 'ramda';
 
 /**
  * [arr1 Sequência de valores]
